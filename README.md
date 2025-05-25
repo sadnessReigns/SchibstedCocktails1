@@ -24,23 +24,23 @@ Executed via coordinators pattern.
 ``Modules:``
 -
 - **SCNetworking**:
--- responsible for performing networking calls;
--- contains SCNetworkingProtocols library, that exposes networking protocols for mocking/testing/injecting purposes and network-related data models;
--- contains SCNetworking itself that is meant to be used within the main target to instantiate services/pass dependencies down the injection chain.
+  - responsible for performing networking calls;
+  - contains SCNetworkingProtocols library, that exposes networking protocols for mocking/testing/injecting purposes and network-related data models;
+  - contains SCNetworking itself that is meant to be used within the main target to instantiate services/pass dependencies down the injection chain.
  
-- **SCLogin**:
--- responsible for signing user in;
--- contains UI for the login flow written on SwiftUI and bridged to a view controller to be used within UIKit-first project;
--- since there was no specific sign up/in API, I decided to go 'creative' and simply call the main API. I decided to go that route to show off some components work and SwiftUI performance, despite this essentially doubles amount of calls needed to app to function (from 1 to 2), and it is also a full-on Rest call without pagination, which returns a full array of data, we should treat it as a PoC instead of a finished ground for the app; later on this call could easily be replaced by a sign in/up API.
+- **SCLogin**: 
+  - responsible for signing user in;
+  - contains UI for the login flow written on SwiftUI and bridged to a view controller to be used within UIKit-first project;
+  - since there was no specific sign up/in API, I decided to go 'creative' and simply call the main API. I decided to go that route to show off some components work and SwiftUI performance, despite this essentially doubles amount of calls needed to app to function (from 1 to 2), and it is also a full-on Rest call without pagination, which returns a full array of data, we should treat it as a PoC instead of a finished ground for the app; later on this call could easily be replaced by a sign in/up API.
 
 - **SCCommon**:
--- a package with commonly shared functionality that is likely to be imported into 90% of product modules (such as SCLogin).
+  - a package with commonly shared functionality that is likely to be imported into 90% of product modules (such as SCLogin).
 
 - **SCComponents**:
--- contains UI components.
+  - contains UI components.
 
 - **SCCocktailBar**:
--- responsible for displaying a collection cocktails.
+  - responsible for displaying a collection cocktails.
 
 ``Misc``
 -
