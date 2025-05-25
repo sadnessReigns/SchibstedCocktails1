@@ -12,6 +12,8 @@ public actor ImageCache {
 
     private let cache = NSCache<NSURL, UIImage>()
 
+    private init() {}
+
     func image(forKey key: NSURL) -> UIImage? {
         cache.object(forKey: key)
     }
