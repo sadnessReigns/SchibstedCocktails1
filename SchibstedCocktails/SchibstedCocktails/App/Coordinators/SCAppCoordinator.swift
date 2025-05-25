@@ -18,7 +18,7 @@ final class SCAppCoordinator: SCCoordinator {
 
     private var childCoordinators = [SCCoordinator]()
 
-    private let keychainService = SCKeychainService()
+    private let keychainService: SCKeychainStorageServiceProtocol
     private let networkingClient: SCNetworkClient
 
     init(window: UIWindow) {
@@ -30,6 +30,7 @@ final class SCAppCoordinator: SCCoordinator {
         let baseURL = URL(string: "http://schibsted-nde-apps-recruitment-task.eu-central-1.elasticbeanstalk.com")!
         let cache = SCNetworkCache()
         self.networkingClient = SCNetworkClient(baseURL: baseURL, cache: cache)
+        self.keychainService = SCKeychainStorageService()
     }
 
     func start() {

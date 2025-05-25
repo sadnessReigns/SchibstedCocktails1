@@ -15,7 +15,7 @@ let package = Package(
     dependencies: [
         .package(path: "../SCComponents"),
         .package(path: "../SCCommon"),
-//        .package(path: "../SCNetworkingProtocols")
+        .package(name: "SCNetworking", path: "../SCNetworking")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -23,9 +23,9 @@ let package = Package(
         .target(
             name: "SCCocktailBar",
             dependencies: [
+                .product(name: "SCNetworkingProtocols", package: "SCNetworking"),
                 "SCComponents",
-                "SCCommon",
-//                "SCNetworkingProtocols"
+                "SCCommon"
             ]
         ),
         .testTarget(

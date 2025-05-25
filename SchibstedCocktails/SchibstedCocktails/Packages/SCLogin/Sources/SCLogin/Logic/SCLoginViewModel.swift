@@ -31,11 +31,11 @@ public final class SCLoginViewModel: ObservableObject {
     @Published internal var errorText: String?
 
     private let networkingClient: SCNetworkClientProtocol
-    private let keychainService: SCKeychainStoring
+    private let keychainService: SCKeychainStorageServiceProtocol
 
     public var loginAttempt: ((Bool) -> Void)?
 
-    public init(networkingClient: SCNetworkClientProtocol, keychainService: SCKeychainStoring) {
+    public init(networkingClient: SCNetworkClientProtocol, keychainService: SCKeychainStorageServiceProtocol) {
         self.networkingClient = networkingClient
         self.keychainService = keychainService
     }
@@ -50,11 +50,11 @@ public final class SCLoginViewModel: ObservableObject {
 
         do {
             try self.keychainService.save(
-                .init(
+                SCCredentials(
                     username: username,
                     password: password
                 ),
-                using: SCCredentialsStoringStrategy()
+                key: .userCredentials
             )
         } catch {
             isLoading = false

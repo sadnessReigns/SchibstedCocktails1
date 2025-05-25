@@ -1,5 +1,5 @@
 //
-//  SCCredentialsStoringStrategy.swift
+//  SCKeychainStorageService.swift
 //  SCCommon
 //
 //  Created by Uladzislau Makei on 24.05.25.
@@ -7,27 +7,22 @@
 
 import Foundation
 
-public class SCCredentialsStoringStrategy: SCKeychainStoringStrategy {
-    public typealias SCKeychainStorableUnit = SCCredentials
-    private let key: String
+public class SCKeychainStorageService: SCKeychainStorageServiceProtocol {
+
     private let keychain: SCKeychainProtocol
 
-    public init(
-        key: String = "SCCredentialsStoringStrategy.key",
-        keychain: SCKeychainProtocol = SCKeychain()
-    ) {
-        self.key = key
+    public init(keychain: SCKeychainProtocol = SCKeychain()) {
         self.keychain = keychain
     }
 
-    public func save(_ unit: SCKeychainStorableUnit) throws {
+    public func save<S: Encodable>(_ unit: S, key: SCKeychainKey) throws {
         guard let data = try? JSONEncoder().encode(unit) else {
             throw SCKeychainError.encodingFailed
         }
 
         let query: [String: Any] = [
             kSecClass as String       : kSecClassGenericPassword,
-            kSecAttrService as String : key,
+            kSecAttrService as String : key.id,
             kSecValueData as String   : data
         ]
 
@@ -38,10 +33,10 @@ public class SCCredentialsStoringStrategy: SCKeychainStoringStrategy {
         }
     }
 
-    public func load() throws -> SCKeychainStorableUnit? {
+    public func load<S: Decodable>(key: SCKeychainKey, as type: S.Type = S.self) throws -> S {
         let query: [String: Any] = [
             kSecClass as String       : kSecClassGenericPassword,
-            kSecAttrService as String : key,
+            kSecAttrService as String : key.id,
             kSecReturnData as String  : true,
             kSecMatchLimit as String  : kSecMatchLimitOne
         ]
@@ -51,7 +46,7 @@ public class SCCredentialsStoringStrategy: SCKeychainStoringStrategy {
 
         guard status == errSecSuccess else { throw SCKeychainError.loadFailed }
         guard let data = dataTypeRef as? Data,
-              let creds = try? JSONDecoder().decode(SCCredentials.self, from: data) else {
+              let creds = try? JSONDecoder().decode(S.self, from: data) else {
             throw SCKeychainError.decodeFailed
         }
 

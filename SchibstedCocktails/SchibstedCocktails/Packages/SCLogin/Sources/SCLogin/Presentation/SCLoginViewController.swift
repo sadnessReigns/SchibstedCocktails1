@@ -10,7 +10,7 @@ import SwiftUI
 
 public final class SCLoginViewController: UIViewController {
 
-    private var viewModel: SCLoginViewModel
+    private let viewModel: SCLoginViewModel
 
     private lazy var hostingController: UIHostingController<SCLoginView> = {
         UIHostingController(rootView: SCLoginView(viewModel: viewModel))

@@ -7,8 +7,14 @@ let package = Package(
     name: "SCNetworking",
     platforms: [.iOS(.v18)],
     products: [
-        .library(name: "SCNetworking", targets: ["SCNetworking"]),
-        .library(name: "SCNetworkingProtocols", targets: ["SCNetworkingProtocols"]),
+        .library(
+            name: "SCNetworking",
+            targets: ["SCNetworking"]
+        ),
+        .library(
+            name: "SCNetworkingProtocols",
+            targets: ["SCNetworkingProtocols"]
+        ),
     ],
     dependencies: [
         .package(path: "../SCCommon")

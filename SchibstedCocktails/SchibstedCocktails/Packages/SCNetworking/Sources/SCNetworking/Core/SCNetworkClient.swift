@@ -35,7 +35,7 @@ extension SCNetworkClient: SCNetworkClientProtocol {
     ) async throws -> T {
         var request = SCRequestBuilder.buildRequest(baseURL: baseURL, endpoint: endpoint)
 
-        if let creds = try? SCKeychainService().load(using: SCCredentialsStoringStrategy()) {
+        if let creds: SCCredentials = try? SCKeychainStorageService().load(key: .userCredentials) {
             let loginString = "\(creds.username):\(creds.password)"
             if let loginData = loginString.data(using: .utf8) {
                 let base64LoginString = loginData.base64EncodedString()

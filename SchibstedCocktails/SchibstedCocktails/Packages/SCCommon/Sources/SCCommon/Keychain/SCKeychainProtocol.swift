@@ -5,17 +5,22 @@
 //  Created by Uladzislau Makei on 24.05.25.
 //
 
-
 import Foundation
 import Security
 
 public protocol SCKeychainProtocol {
+    @discardableResult
     func add(_ query: CFDictionary) -> OSStatus
+
+    @discardableResult
     func delete(_ query: CFDictionary) -> OSStatus
+
+    @discardableResult
     func copyMatching(_ query: CFDictionary, _ result: UnsafeMutablePointer<AnyObject?>) -> OSStatus
 }
 
 public final class SCKeychain: SCKeychainProtocol {
+
     public init() {}
 
     @discardableResult

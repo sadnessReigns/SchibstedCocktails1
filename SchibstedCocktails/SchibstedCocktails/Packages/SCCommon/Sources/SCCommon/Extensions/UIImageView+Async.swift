@@ -27,7 +27,6 @@ public actor ImageCache {
 public extension UIImageView {
 
     private class AssociatedKeys {
-        // static var is mutable, which is required to get its address safely
         @MainActor static var imageLoadTaskKey = 0
     }
 
@@ -46,20 +45,23 @@ public extension UIImageView {
 
         let task = Task { [weak self] in
             guard let self = self else { return }
+
             if let cached = await ImageCache.shared.image(forKey: url as NSURL) {
                 self.image = cached
                 return
             }
+
             do {
+
                 let (data, _) = try await URLSession.shared.data(from: url)
                 guard !Task.isCancelled else { return }
+
                 if let image = UIImage(data: data) {
                     await ImageCache.shared.insertImage(image, forKey: url as NSURL)
                     self.image = image
                 }
-            } catch {
-                // ignore or handle error
-            }
+
+            } catch {}
         }
 
         currentTask = task

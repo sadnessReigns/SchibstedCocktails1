@@ -13,14 +13,14 @@ import SCCommon
 
 final class SCLoginCoordinator: SCCoordinator {
     private let navigationController: UINavigationController
-    private let keychainService: SCKeychainStoring
+    private let keychainService: SCKeychainStorageServiceProtocol
     private let networkingClient: SCNetworkClient
     
     var loginAttempt: ((Bool) -> Void)?
 
     init(
         navigationController: UINavigationController,
-        keychainService: SCKeychainStoring,
+        keychainService: SCKeychainStorageServiceProtocol,
         networkingClient: SCNetworkClient
     ) {
         self.navigationController = navigationController

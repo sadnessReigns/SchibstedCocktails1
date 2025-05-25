@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B98DB642DE336A200380291 /* SCNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 2B98DB632DE336A200380291 /* SCNetworking */; };
-		2B98DB662DE336A200380291 /* SCNetworkingProtocols in Frameworks */ = {isa = PBXBuildFile; productRef = 2B98DB652DE336A200380291 /* SCNetworkingProtocols */; };
-		2B98DB692DE336B500380291 /* SCCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 2B98DB682DE336B500380291 /* SCCommon */; };
-		2B98DB6C2DE336C300380291 /* SCComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 2B98DB6B2DE336C300380291 /* SCComponents */; };
-		2B98DB6F2DE336CF00380291 /* SCLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 2B98DB6E2DE336CF00380291 /* SCLogin */; };
-		2B98DB722DE336DB00380291 /* SCCocktailBar in Frameworks */ = {isa = PBXBuildFile; productRef = 2B98DB712DE336DB00380291 /* SCCocktailBar */; };
+		2BFB359B2DE36B0C007ABFDA /* SCNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 2BFB359A2DE36B0C007ABFDA /* SCNetworking */; };
+		2BFB359D2DE36B0C007ABFDA /* SCNetworkingProtocols in Frameworks */ = {isa = PBXBuildFile; productRef = 2BFB359C2DE36B0C007ABFDA /* SCNetworkingProtocols */; };
+		2BFB35A02DE36B1B007ABFDA /* SCCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 2BFB359F2DE36B1B007ABFDA /* SCCommon */; };
+		2BFB35A32DE36B26007ABFDA /* SCComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 2BFB35A22DE36B26007ABFDA /* SCComponents */; };
+		2BFB35A62DE36B31007ABFDA /* SCLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 2BFB35A52DE36B31007ABFDA /* SCLogin */; };
+		2BFB35A92DE36B3F007ABFDA /* SCCocktailBar in Frameworks */ = {isa = PBXBuildFile; productRef = 2BFB35A82DE36B3F007ABFDA /* SCCocktailBar */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +31,19 @@
 			remoteInfo = SchibstedCocktails;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2B52E9762DE3656400208CD9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2B2736002DE1B8F600045E9A /* SchibstedCocktails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchibstedCocktails.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,12 +89,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B98DB722DE336DB00380291 /* SCCocktailBar in Frameworks */,
-				2B98DB6C2DE336C300380291 /* SCComponents in Frameworks */,
-				2B98DB692DE336B500380291 /* SCCommon in Frameworks */,
-				2B98DB662DE336A200380291 /* SCNetworkingProtocols in Frameworks */,
-				2B98DB6F2DE336CF00380291 /* SCLogin in Frameworks */,
-				2B98DB642DE336A200380291 /* SCNetworking in Frameworks */,
+				2BFB35A92DE36B3F007ABFDA /* SCCocktailBar in Frameworks */,
+				2BFB35A32DE36B26007ABFDA /* SCComponents in Frameworks */,
+				2BFB35A02DE36B1B007ABFDA /* SCCommon in Frameworks */,
+				2BFB359D2DE36B0C007ABFDA /* SCNetworkingProtocols in Frameworks */,
+				2BFB35A62DE36B31007ABFDA /* SCLogin in Frameworks */,
+				2BFB359B2DE36B0C007ABFDA /* SCNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +146,7 @@
 				2B2735FC2DE1B8F600045E9A /* Sources */,
 				2B2735FD2DE1B8F600045E9A /* Frameworks */,
 				2B2735FE2DE1B8F600045E9A /* Resources */,
+				2B52E9762DE3656400208CD9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -143,12 +157,12 @@
 			);
 			name = SchibstedCocktails;
 			packageProductDependencies = (
-				2B98DB632DE336A200380291 /* SCNetworking */,
-				2B98DB652DE336A200380291 /* SCNetworkingProtocols */,
-				2B98DB682DE336B500380291 /* SCCommon */,
-				2B98DB6B2DE336C300380291 /* SCComponents */,
-				2B98DB6E2DE336CF00380291 /* SCLogin */,
-				2B98DB712DE336DB00380291 /* SCCocktailBar */,
+				2BFB359A2DE36B0C007ABFDA /* SCNetworking */,
+				2BFB359C2DE36B0C007ABFDA /* SCNetworkingProtocols */,
+				2BFB359F2DE36B1B007ABFDA /* SCCommon */,
+				2BFB35A22DE36B26007ABFDA /* SCComponents */,
+				2BFB35A52DE36B31007ABFDA /* SCLogin */,
+				2BFB35A82DE36B3F007ABFDA /* SCCocktailBar */,
 			);
 			productName = SchibstedCocktails;
 			productReference = 2B2736002DE1B8F600045E9A /* SchibstedCocktails.app */;
@@ -233,10 +247,11 @@
 			mainGroup = 2B2735F72DE1B8F600045E9A;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				2B98DB672DE336B500380291 /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCCommon" */,
-				2B98DB6A2DE336C300380291 /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCComponents" */,
-				2B98DB6D2DE336CF00380291 /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCLogin" */,
-				2B98DB702DE336DB00380291 /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCCocktailBar" */,
+				2BFB35992DE36B0C007ABFDA /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCNetworking" */,
+				2BFB359E2DE36B1B007ABFDA /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCCommon" */,
+				2BFB35A12DE36B26007ABFDA /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCComponents" */,
+				2BFB35A42DE36B31007ABFDA /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCLogin" */,
+				2BFB35A72DE36B3F007ABFDA /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCCocktailBar" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2B2736012DE1B8F600045E9A /* Products */;
@@ -605,46 +620,50 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		2B98DB672DE336B500380291 /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCCommon" */ = {
+		2BFB35992DE36B0C007ABFDA /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCNetworking" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = SchibstedCocktails/Packages/SCNetworking;
+		};
+		2BFB359E2DE36B1B007ABFDA /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCCommon" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = SchibstedCocktails/Packages/SCCommon;
 		};
-		2B98DB6A2DE336C300380291 /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCComponents" */ = {
+		2BFB35A12DE36B26007ABFDA /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCComponents" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = SchibstedCocktails/Packages/SCComponents;
 		};
-		2B98DB6D2DE336CF00380291 /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCLogin" */ = {
+		2BFB35A42DE36B31007ABFDA /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCLogin" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = SchibstedCocktails/Packages/SCLogin;
 		};
-		2B98DB702DE336DB00380291 /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCCocktailBar" */ = {
+		2BFB35A72DE36B3F007ABFDA /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCCocktailBar" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = SchibstedCocktails/Packages/SCCocktailBar;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2B98DB632DE336A200380291 /* SCNetworking */ = {
+		2BFB359A2DE36B0C007ABFDA /* SCNetworking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SCNetworking;
 		};
-		2B98DB652DE336A200380291 /* SCNetworkingProtocols */ = {
+		2BFB359C2DE36B0C007ABFDA /* SCNetworkingProtocols */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SCNetworkingProtocols;
 		};
-		2B98DB682DE336B500380291 /* SCCommon */ = {
+		2BFB359F2DE36B1B007ABFDA /* SCCommon */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SCCommon;
 		};
-		2B98DB6B2DE336C300380291 /* SCComponents */ = {
+		2BFB35A22DE36B26007ABFDA /* SCComponents */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SCComponents;
 		};
-		2B98DB6E2DE336CF00380291 /* SCLogin */ = {
+		2BFB35A52DE36B31007ABFDA /* SCLogin */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SCLogin;
 		};
-		2B98DB712DE336DB00380291 /* SCCocktailBar */ = {
+		2BFB35A82DE36B3F007ABFDA /* SCCocktailBar */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SCCocktailBar;
 		};
