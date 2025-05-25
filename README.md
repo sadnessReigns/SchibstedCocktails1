@@ -58,6 +58,7 @@ Project contains example test coverage and a custom test plan with certain modul
 - 
 Thanks for asking! :D 
 First things first - tests coverage as close to 100% as possible. Snapshot tests for UI components. Snapshot tests for product modules (SCLogin and SCCocktailBar).
+Documentation for methods / enum cases / etc. Just lots of docs to cover all possible questions and API usages.
 A custom session instead of a plain wrapper. 
 Smarter caching with flexible expiration policy, that would allow an offline mode and seamless offline-online transition.
 Transition to https and actual challenge response instead of a header-based auth.
