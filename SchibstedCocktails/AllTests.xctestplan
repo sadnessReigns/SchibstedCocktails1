@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "662E2AA8-4DF0-4D2E-8BB0-754344F6EB2B",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:SchibstedCocktails\/Packages\/SCCommon",
+        "identifier" : "SCCommonTests",
+        "name" : "SCCommonTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:SchibstedCocktails.xcodeproj",
+        "identifier" : "2B2736152DE1B8F900045E9A",
+        "name" : "SchibstedCocktailsTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:SchibstedCocktails\/Packages\/SCNetworking",
+        "identifier" : "SCNetworkingTests",
+        "name" : "SCNetworkingTests"
+      }
+    }
+  ],
+  "version" : 1
+}
