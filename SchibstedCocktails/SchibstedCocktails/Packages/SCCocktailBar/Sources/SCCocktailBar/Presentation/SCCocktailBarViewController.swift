@@ -55,6 +55,9 @@ public final class SCCocktailBarViewController: UIViewController {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
         collection.allowsSelection = false
         collection.backgroundColor = .clear
+        collection.alwaysBounceVertical = true
+        collection.alwaysBounceHorizontal = false
+
         return collection
     }()
 
@@ -77,13 +80,12 @@ public final class SCCocktailBarViewController: UIViewController {
         setupDataFlow()
         performInitialLoad()
         setupVisuals()
-    }
+        navigationController?.navigationBar.isTranslucent = true
 
-    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-
-        if previousTraitCollection?.userInterfaceStyle != traitCollection.userInterfaceStyle {
-            setupVisuals()
+        registerForTraitChanges([UITraitUserInterfaceStyle.self]) { (self: Self, previousTraitCollection: UITraitCollection) in
+            if previousTraitCollection.userInterfaceStyle != self.traitCollection.userInterfaceStyle {
+                self.setupVisuals()
+            }
         }
     }
 

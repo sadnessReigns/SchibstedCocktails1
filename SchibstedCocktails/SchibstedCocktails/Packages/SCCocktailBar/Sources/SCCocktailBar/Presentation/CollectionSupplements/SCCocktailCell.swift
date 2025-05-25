@@ -61,14 +61,6 @@ final class SCCocktailCell: UICollectionViewCell {
         configuration = .initial
     }
 
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-
-        if previousTraitCollection?.userInterfaceStyle != traitCollection.userInterfaceStyle {
-            setupVisuals()
-        }
-    }
-
     // MARK: - Init
 
     override init(frame: CGRect) {
@@ -76,6 +68,12 @@ final class SCCocktailCell: UICollectionViewCell {
         setupHierarchy()
         setupConstraints()
         setupVisuals()
+
+        registerForTraitChanges([UITraitUserInterfaceStyle.self]) { (self: Self, previousTraitCollection: UITraitCollection) in
+            if previousTraitCollection.userInterfaceStyle != self.traitCollection.userInterfaceStyle {
+                self.setupVisuals()
+            }
+        }
     }
 
     @available(*, unavailable)
