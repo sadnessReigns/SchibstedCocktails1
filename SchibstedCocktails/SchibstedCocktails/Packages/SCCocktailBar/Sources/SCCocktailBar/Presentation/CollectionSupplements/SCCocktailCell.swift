@@ -97,7 +97,7 @@ private extension SCCocktailCell {
             )
         default:
             (
-                UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1),
+                UIColor(red: 215/255, green: 215/255, blue: 215/255, alpha: 1),
                 UIColor(red: 33/255, green: 33/255, blue: 33/255, alpha: 1)
             )
         }

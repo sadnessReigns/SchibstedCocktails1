@@ -76,6 +76,15 @@ public final class SCCocktailBarViewController: UIViewController {
         setupConstraints()
         setupDataFlow()
         performInitialLoad()
+        setupVisuals()
+    }
+
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        if previousTraitCollection?.userInterfaceStyle != traitCollection.userInterfaceStyle {
+            setupVisuals()
+        }
     }
 
     // MARK: - Init
@@ -144,6 +153,13 @@ private extension SCCocktailBarViewController {
 // MARK: - UI Setup
 
 private extension SCCocktailBarViewController {
+
+    func setupVisuals() {
+        view.backgroundColor = switch traitCollection.userInterfaceStyle {
+        case .dark: UIColor(red: 15/255, green: 15/255, blue: 15/255, alpha: 1)
+        default: UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
+        }
+    }
 
     func setupHierarchy() {
         view.addSubview(collectionView)
