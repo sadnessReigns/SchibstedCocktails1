@@ -233,7 +233,6 @@
 			mainGroup = 2B2735F72DE1B8F600045E9A;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				2B98DB622DE336A200380291 /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCNetworking" */,
 				2B98DB672DE336B500380291 /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCCommon" */,
 				2B98DB6A2DE336C300380291 /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCComponents" */,
 				2B98DB6D2DE336CF00380291 /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCLogin" */,
@@ -606,10 +605,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		2B98DB622DE336A200380291 /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCNetworking" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = SchibstedCocktails/Packages/SCNetworking;
-		};
 		2B98DB672DE336B500380291 /* XCLocalSwiftPackageReference "SchibstedCocktails/Packages/SCCommon" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = SchibstedCocktails/Packages/SCCommon;
