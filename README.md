@@ -16,6 +16,14 @@ SC prefix stands for SchibstedCocktails, and is there to prevent potential depen
 -
 Keychain!
 
+``Does it support accessibility features?``
+-
+Yes! VoiceOver and dynamic type!
+
+``What if I'm not freaky and actually like dark theme?``
+- 
+Supports both light and dark themes!
+
 ``Navigation``
 -
 Executed via coordinators pattern.
