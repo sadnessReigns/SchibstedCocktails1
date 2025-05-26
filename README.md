@@ -2,6 +2,7 @@
 **Rant**
 
 Apologies, but I was confused by the "3 days deadline, 1 hour expectation". So I decided to treat task as-if I am in an R&D stage, and create 2 projects - first I gave myself a day of work, second I gave myself 1 hour exactly. This one is first. 
+I tried to be creative and demonstrate different techniques: from packaging local modules, up to pretending some of them are remote packages (SCNetworking in my case), merging SwiftUI with UIKit-first project and so on.
 I treated it like an application that is supposed to grow in future, despite right now being simple.
 
 ``Project Architecture``
